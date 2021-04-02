@@ -7,7 +7,7 @@ function Home() {
             <h1>Home</h1>
             <Contador />
             <Link href="/sobre">
-                <a>Sobre</a>
+                <a>Sobre:</a>
             </Link>
             
         </div>
