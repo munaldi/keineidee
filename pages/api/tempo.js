@@ -1,4 +1,4 @@
-function Tempo(request,  response) {  
+function tempo(request,  response) {  
     const dynamicDate = new Date();
 
     response.json({
