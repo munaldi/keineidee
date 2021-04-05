@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 
 export async function getServerSideProps(context) {
     const id = context.params.id;
+
     return {
         props: {
             id: id
@@ -21,9 +22,10 @@ export async function getServerSideProps(context) {
 }
 
 async function Cnpj(props, response) {
-    const apiSecret = process.env.RECEITAWS;
-    var url = 'https://www.receitaws.com.br/v1/cnpj/'+`${props.id}`;
-    let nome = '';
+
+const apiSecret = process.env.RECEITAWS;
+var url = `https://www.receitaws.com.br/v1/cnpj/${props.query.id}`;
+let nome = '';
     let cnpj = '';
     const receitaResponse = await axios.get(url, {
         headers: {
@@ -41,7 +43,6 @@ async function Cnpj(props, response) {
         url: url
 
     })
-    
 }
 
 export default Cnpj;
